@@ -1,7 +1,8 @@
 version: "2"
 services:
   drupal:
-    image: drupal
+    image: drupal_custom_v1
+    build: .
     ports:
       - "8080:80"
     volumes:
@@ -11,7 +12,7 @@ services:
       - drupal-themes:/var/www/html/themes
 
   postgres:
-    image: postgres
+    image: postgres:latest
     environment:
       - POSTGRES_PASSWORD=mypasswd
     volumes:
